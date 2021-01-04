@@ -1,0 +1,105 @@
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+
+@tailwind base;
+/**
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins.
+ */
+
+@tailwind components;
+/**
+ * This injects Tailwind's utility classes and any utility classes registered
+ * by plugins.
+ */
+
+@tailwind utilities;
+@layer base {
+    @font-face {
+        font-family: Barlow Semi Condensed;
+        font-weight: 600;
+        src: url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap");
+    }
+    @font-face {
+        font-family: Barlow Semi Condensed;
+        font-weight: 700;
+        src: url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&display=swap");
+    }
+}
+
+.bg-main-board {
+    @apply bg-board bg-cover;
+    background-size: 205px 177px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 205px;
+    height: 177px;
+}
+
+.option {
+    @apply bg-white relative w-32 h-32 rounded-full justify-center items-center flex border-15 z-10;
+    box-shadow: 0 4px 8px inset theme("colors.rpc-shadow")
+}
+
+.option-container-position-paper {
+    top: -55px;
+    left: -50px;
+}
+
+.option-paper {
+    @apply option;
+    border-color: hsl(230, 89%, 65%);
+}
+
+.option-container-position-scissors {
+    top: -55px;
+}
+
+.option-scissors {
+    @apply option;
+    border-color: hsl(40, 84%, 53%);
+}
+
+.option-container-position-rock {
+    top: 90px;
+    left: -220px;
+}
+
+.option-rock {
+    @apply option;
+    border-color: theme("colors.rpc-red-light");
+}
+
+.selection-glow {
+    border-radius: 85px;
+    box-shadow: 0 0 100px 65px theme("colors.rpc-shadow");
+}
+
+@screen md {
+    .bg-main-board {
+        @apply bg-board bg-cover;
+        background-size: 405px 377px;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 405px;
+        height: 377px;
+    }
+    .option {
+        @apply bg-white relative w-40 h-40 rounded-full justify-center items-center flex border-15 z-10;
+        box-shadow: 0 4px 8px inset theme("colors.rpc-shadow")
+    }
+    .option-container-position-scissors {
+        right: -130px;
+        top: -65px;
+    }
+    .option-container-position-paper {
+        top: -65px;
+        left: -50px;
+    }
+    .option-container-position-rock {
+        top: 260px;
+        left: -200px;
+    }
+}
